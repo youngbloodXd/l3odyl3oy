@@ -1,0 +1,226 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.nav{background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-size:15px;font-weight:500;letter-spacing:0.08em;color:var(--color-text-primary)}
+.logo span{color:#444441}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--color-text-primary)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.cart-btn{background:#2C2C2A;color:#F1EFE8;border:none;padding:7px 18px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;font-weight:500}
+.hero{padding:3rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
+.hero-text{display:flex;flex-direction:column;justify-content:center;gap:1rem}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;background:#D3D1C7;color:#2C2C2A;padding:4px 10px;border-radius:20px;width:fit-content}
+.hero-title{font-size:28px;font-weight:500;line-height:1.25;color:var(--color-text-primary)}
+.hero-title em{font-style:normal;color:#444441}
+.hero-sub{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.hero-actions{display:flex;gap:12px;align-items:center}
+.btn-primary{background:#2C2C2A;color:#F1EFE8;border:none;padding:9px 22px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;font-weight:500}
+.btn-ghost{background:transparent;color:var(--color-text-secondary);border:0.5px solid var(--color-border-secondary);padding:9px 18px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer}
+.hero-img{background:#F1EFE8;border-radius:var(--border-radius-lg);border:0.5px solid #D3D1C7;display:flex;align-items:center;justify-content:center;min-height:180px;flex-direction:column;gap:8px}
+.hero-img i{font-size:48px;color:#5F5E5A;opacity:0.7}
+.hero-img span{font-size:12px;color:#888780}
+.section{padding:1.5rem 2rem;max-width:900px;margin:0 auto}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.section-title{font-size:15px;font-weight:500}
+.see-all{font-size:12px;color:#5F5E5A;text-decoration:none;cursor:pointer}
+.cats{display:flex;gap:8px;flex-wrap:wrap}
+.cat{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:6px 14px;font-size:12px;cursor:pointer;color:var(--color-text-secondary);display:flex;align-items:center;gap:6px}
+.cat.active,.cat:hover{background:#D3D1C7;border-color:#B4B2A9;color:#2C2C2A}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pcard{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;cursor:pointer}
+.pcard:hover{border-color:#888780}
+.pimg{background:#F1EFE8;height:110px;display:flex;align-items:center;justify-content:center;position:relative}
+.pimg i{font-size:36px;color:#888780;opacity:0.6}
+.pfav{position:absolute;top:8px;right:8px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.pfav i{font-size:13px;color:var(--color-text-secondary)}
+.pbadge{position:absolute;top:8px;left:8px;background:#2C2C2A;color:#F1EFE8;font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px}
+.pinfo{padding:10px 12px}
+.pbrand{font-size:10px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em}
+.pname{font-size:13px;font-weight:500;margin:2px 0 6px;line-height:1.3}
+.pfoot{display:flex;justify-content:space-between;align-items:center}
+.pprice{font-size:14px;font-weight:500;color:#2C2C2A}
+.pold{font-size:11px;color:var(--color-text-secondary);text-decoration:line-through;margin-left:4px}
+.padd{background:#2C2C2A;color:#F1EFE8;border:none;width:26px;height:26px;border-radius:var(--border-radius-md);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:#F1EFE8;border:0.5px solid #D3D1C7;border-radius:var(--border-radius-md);padding:12px 14px;text-align:center}
+.stat-n{font-size:20px;font-weight:500;color:#2C2C2A}
+.stat-l{font-size:11px;color:#888780;margin-top:2px}
+.banner{background:#F1EFE8;border-radius:var(--border-radius-lg);border:0.5px solid #D3D1C7;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;margin:0 2rem 2rem;max-width:900px;margin-left:auto;margin-right:auto}
+.banner-left{display:flex;align-items:center;gap:12px}
+.banner-icon{background:#2C2C2A;color:#F1EFE8;width:36px;height:36px;border-radius:var(--border-radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.banner-icon i{font-size:18px}
+.banner-title{font-size:13px;font-weight:500;color:#2C2C2A}
+.banner-sub{font-size:12px;color:#5F5E5A;margin-top:2px}
+.banner-btn{background:#2C2C2A;color:#F1EFE8;border:none;padding:8px 18px;border-radius:var(--border-radius-md);font-size:12px;cursor:pointer;white-space:nowrap}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0 2rem}
+</style>
+
+<h2 class="sr-only">Gaming Gear Store — gray minimal theme mockup</h2>
+
+<nav class="nav">
+  <div class="logo">GEAR<span>X</span></div>
+  <ul class="nav-links">
+    <li><a href="#">หน้าหลัก</a></li>
+    <li><a href="#">สินค้า</a></li>
+    <li><a href="#">แบรนด์</a></li>
+    <li><a href="#">โปรโมชัน</a></li>
+  </ul>
+  <div class="nav-right">
+    <i class="ti ti-search" style="font-size:18px;color:var(--color-text-secondary);cursor:pointer" aria-label="ค้นหา"></i>
+    <i class="ti ti-bell" style="font-size:18px;color:var(--color-text-secondary);cursor:pointer" aria-label="แจ้งเตือน"></i>
+    <i class="ti ti-user" style="font-size:18px;color:var(--color-text-secondary);cursor:pointer" aria-label="บัญชีผู้ใช้"></i>
+    <button class="cart-btn"><i class="ti ti-shopping-cart" style="font-size:13px;vertical-align:-1px;margin-right:5px" aria-hidden="true"></i>ตะกร้า (3)</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <span class="badge"><i class="ti ti-bolt" style="font-size:12px" aria-hidden="true"></i> ของใหม่มาถึงแล้ว</span>
+    <h1 class="hero-title">อุปกรณ์เกมมิ่ง<br>ที่<em>เหนือกว่า</em>ทุกอย่าง</h1>
+    <p class="hero-sub">คัดสรรสินค้าจากแบรนด์ชั้นนำ เพื่อนักเล่นเกมที่ต้องการประสิทธิภาพสูงสุด</p>
+    <div class="hero-actions">
+      <button class="btn-primary">เลือกซื้อสินค้า</button>
+      <button class="btn-ghost">ดูโปรโมชัน</button>
+    </div>
+  </div>
+  <div class="hero-img">
+    <i class="ti ti-device-gamepad-2" aria-hidden="true"></i>
+    <span>Featured: Razer BlackShark V2</span>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;padding-bottom:1rem">
+  <div class="stats">
+    <div class="stat"><div class="stat-n">2,400+</div><div class="stat-l">สินค้าทั้งหมด</div></div>
+    <div class="stat"><div class="stat-n">48 ชม.</div><div class="stat-l">จัดส่งรวดเร็ว</div></div>
+    <div class="stat"><div class="stat-n">50+</div><div class="stat-l">แบรนด์ชั้นนำ</div></div>
+    <div class="stat"><div class="stat-n">98%</div><div class="stat-l">ความพึงพอใจ</div></div>
+  </div>
+</div>
+
+<hr class="divider" style="margin:1rem 2rem">
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-title">หมวดหมู่สินค้า</span>
+  </div>
+  <div class="cats">
+    <div class="cat active"><i class="ti ti-layout-grid" style="font-size:13px" aria-hidden="true"></i> ทั้งหมด</div>
+    <div class="cat"><i class="ti ti-mouse" style="font-size:13px" aria-hidden="true"></i> เมาส์</div>
+    <div class="cat"><i class="ti ti-keyboard" style="font-size:13px" aria-hidden="true"></i> คีย์บอร์ด</div>
+    <div class="cat"><i class="ti ti-headphones" style="font-size:13px" aria-hidden="true"></i> หูฟัง</div>
+    <div class="cat"><i class="ti ti-device-desktop" style="font-size:13px" aria-hidden="true"></i> จอมอนิเตอร์</div>
+    <div class="cat"><i class="ti ti-device-gamepad-2" style="font-size:13px" aria-hidden="true"></i> เก้าอี้เกมมิ่ง</div>
+    <div class="cat"><i class="ti ti-devices" style="font-size:13px" aria-hidden="true"></i> อุปกรณ์เสริม</div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0.5rem">
+  <div class="section-header">
+    <span class="section-title">สินค้าแนะนำ</span>
+    <a class="see-all">ดูทั้งหมด <i class="ti ti-arrow-right" style="font-size:12px;vertical-align:-1px" aria-hidden="true"></i></a>
+  </div>
+  <div class="products">
+    <div class="pcard">
+      <div class="pimg">
+        <div class="pbadge">ขายดี</div>
+        <i class="ti ti-mouse" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">Logitech</div>
+        <div class="pname">G Pro X Superlight 2</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿4,290</span><span class="pold">฿4,990</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pimg">
+        <div class="pbadge">ใหม่</div>
+        <i class="ti ti-keyboard" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">Keychron</div>
+        <div class="pname">Q3 Pro Wireless</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿5,990</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pimg">
+        <i class="ti ti-headphones" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">Razer</div>
+        <div class="pname">BlackShark V2 Pro</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿6,500</span><span class="pold">฿7,200</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pimg">
+        <div class="pbadge">-20%</div>
+        <i class="ti ti-device-desktop" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">ASUS ROG</div>
+        <div class="pname">Swift 27" 240Hz IPS</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿14,900</span><span class="pold">฿18,500</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pimg">
+        <i class="ti ti-device-gamepad-2" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">SteelSeries</div>
+        <div class="pname">Arctis Nova Pro Wireless</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿8,900</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pimg">
+        <div class="pbadge">ใหม่</div>
+        <i class="ti ti-mouse" aria-hidden="true"></i>
+        <div class="pfav"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="pinfo">
+        <div class="pbrand">Zowie</div>
+        <div class="pname">EC3-CW Wireless</div>
+        <div class="pfoot">
+          <div><span class="pprice">฿3,490</span></div>
+          <button class="padd" aria-label="เพิ่มในตะกร้า">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="banner-left">
+    <div class="banner-icon"><i class="ti ti-truck-delivery" aria-hidden="true"></i></div>
+    <div>
+      <div class="banner-title">สั่งซื้อวันนี้ รับฟรีค่าจัดส่งทั่วประเทศ</div>
+      <div class="banner-sub">สำหรับออเดอร์ครบ ฿500 ขึ้นไป · ส่งเร็วใน 48 ชั่วโมง</div>
+    </div>
+  </div>
+  <button class="banner-btn">ช้อปเลย</button>
+</div>
